@@ -6,7 +6,7 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/07/23 16:26:22 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/10/01 14:51:44 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/11 13:26:26 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../minilibx_macos/mlx.h"
 # include "math.h"
-# include "../libft/includes/libft.h"
+# include "../libft/srcs/libft.h"
 # include <stdio.h>
 # include <pthread.h>
 
@@ -62,7 +62,7 @@ typedef struct	s_fract
 	double	scale;
 	double	xt;
 	double	yt;
-	int		section_y;
+	int		section_y[WINY / 30];
 	t_flag	flag;
 }				t_fract;
 

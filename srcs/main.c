@@ -6,7 +6,7 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/07/23 14:55:49 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/09/30 22:00:50 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/11 15:57:46 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		initialize_data(t_fract *frt)
 	temp = 0;
 	frt->mlx = mlx_init();
 	frt->iter = 200;
-	frt->scale = 1400.0;
+	frt->scale = 800.0;
 	frt->xt = 150;
 	frt->yt = 0;
 	initialize_flags(frt);
