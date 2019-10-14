@@ -6,7 +6,7 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/29 20:20:01 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/10/14 21:14:59 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/14 21:35:47 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ int		calc_julia(double x, double y, t_fract *fract)
 	if ((zx * zx) + (zy * zy) < 4.0)
 		return (0);
 	if (fract->flag.p == -1)
-		return (hsv_to_int(fract->flag.b * log(zx2 * zx), 0.7, 1.0));
-	return (hsv_to_int(iter + fract->flag.b * 180, 0.7, 1.0));
+		return (hsv_to_int(fract->flag.b * 180 + 10 * sqrt(log(zx2 * zx)), 0.6, 1.0));
+	return (hsv_to_int(iter + fract->flag.b * 180, 0.6, 1.0));
 }
 
 int		calc_iterations(double x, double y, t_fract *fract)
@@ -78,7 +78,7 @@ int		calc_iterations(double x, double y, t_fract *fract)
 		color = calc_mandelbrot(x, y, fract);
 	if (fract->f == 2)
 		color = calc_julia(x, y, fract);
-	if (fract->f == 3)
-		color = calc_third(x, y, fract);
+	//if (fract->f == 3)
+	//	color = calc_third(x, y, fract);
 	return (color);
 }
