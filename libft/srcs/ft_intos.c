@@ -6,11 +6,11 @@
 /*   By: jboer <jboer@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/04 10:44:05 by jboer          #+#    #+#                */
-/*   Updated: 2019/09/29 15:20:57 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/09/10 13:55:27 by jboer         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 char		*ft_intos(char *strn, int intlen, int i, int n)
 {

@@ -6,11 +6,11 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/07/23 14:55:49 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/10/11 15:57:46 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/12 13:39:21 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 void	initialize_flags(t_fract *frt)
 {

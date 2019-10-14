@@ -6,11 +6,11 @@
 /*   By: jboer <jboer@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/22 16:59:35 by jboer          #+#    #+#                */
-/*   Updated: 2019/09/29 15:20:57 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/09/11 15:44:34 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 void	*ft_memalloc(size_t size)
 {

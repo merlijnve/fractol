@@ -6,11 +6,11 @@
 /*   By: jboer <jboer@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/18 13:02:13 by jboer          #+#    #+#                */
-/*   Updated: 2019/09/29 15:20:57 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/09/20 15:16:07 by jboer         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static char		*round_up(char *str, int prec, long double f, long long n[2])
 {

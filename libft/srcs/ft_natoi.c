@@ -6,11 +6,11 @@
 /*   By: jboer <jboer@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/08/05 15:22:51 by jboer          #+#    #+#                */
-/*   Updated: 2019/09/29 15:20:57 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/08/05 15:24:52 by jboer         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static int	ft_atoipm(const char *str, int neg)
 {

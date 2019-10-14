@@ -6,11 +6,11 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/29 17:15:41 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/09/30 16:40:19 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/12 13:39:21 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 int				rgb_to_int(t_rgb rgb)
 {

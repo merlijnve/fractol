@@ -6,7 +6,7 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/07/23 16:26:22 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/10/11 13:26:26 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/14 14:52:26 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,24 @@ typedef struct	s_fract
 	t_flag	flag;
 }				t_fract;
 
+typedef struct s_sect
+{
+	t_fract	*fract;
+	int		i;
+}				t_sect;
+
+
 int				loop_strcmp(char**argv, t_fract *frt);
 int				key_press(int key, t_fract *frt);
 int				mpress(int button, int x, int y, t_fract *frt);
 void			draw(t_fract *frt);
-void			imgpxlput(t_fract *frt, int color, int x, int y);
+void			img_put(char *address, int color, int x, int y);
 int				calc_point(t_fract *frt, int x, int y);
 t_rgb			hsv_to_rgb(double hue, double sat, double value);
 int				rgb_to_int(t_rgb rgb);
 int				hsv_to_int(int hue, double sat, double value);
 int				calc_mandelbrot(double x, double y, t_fract *frt);
+void			draw_triangle(char *adr, int x, int y, int size);
+void			draw_sierpinski(t_fract *fract);
 
 #endif

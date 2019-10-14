@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr.c                                        :+:    :+:            */
+/*   draw_line.h                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/11 17:07:42 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/09/17 14:00:27 by mvan-eng      ########   odam.nl         */
+/*   Created: 2019/10/12 13:29:36 by mvan-eng       #+#    #+#                */
+/*   Updated: 2019/10/12 14:57:30 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef DRAW_LINE_H
+# define DRAW_LINE_H
 
-void	ft_putstr(char const *s)
+typedef struct	s_line
 {
-	write(1, s, ft_strlen(s));
-}
+	int		dx;
+	int		dy;
+	int		x;
+	int		y;
+	int		d;
+	int		i;
+}				t_line;
+
+typedef struct	s_point
+{
+	int		x;
+	int		y;
+	int		z;
+	int		color;
+}				t_point;
+
+void			draw_line(t_point p0, t_point p1, int color, char *address);
+
+#endif

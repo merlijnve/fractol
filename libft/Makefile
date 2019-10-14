@@ -6,7 +6,7 @@
 #    By: mvan-eng <mvan-eng@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/01/10 14:10:44 by mvan-eng       #+#    #+#                 #
-#    Updated: 2019/09/29 15:22:54 by mvan-eng      ########   odam.nl          #
+#    Updated: 2019/09/29 14:24:28 by mvan-eng      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,6 @@ SRC = $(FILES:%=srcs/%)
 
 OBJ = $(FILES:.c=.o)
 
-INC = includes/libft.h
-
 all: $(NAME)
 
 $(NAME):
@@ -43,7 +41,7 @@ $(NAME):
 	@gcc $(FLAGS) -c $(SRC)
 	@echo "-----  Objects  created  -----"
 	@echo "-----  Creating library  -----"
-	@ar rcs libft.a $(OBJ) $(INC)
+	@ar rcs libft.a $(OBJ)
 	@ranlib $(NAME)
 	@rm -f $(OBJ)
 	@echo ">>>>> Compiling Success! <<<<<"

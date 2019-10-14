@@ -5,12 +5,12 @@
 /*                                                     +:+                    */
 /*   By: mvan-eng <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/11 18:02:21 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/09/29 15:20:57 by mvan-eng      ########   odam.nl         */
+/*   Created: 2019/01/11 18:02:21 by mvan-eng      #+#    #+#                 */
+/*   Updated: 2019/01/11 18:06:32 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

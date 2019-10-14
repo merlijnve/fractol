@@ -6,11 +6,11 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/29 15:00:11 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/09/30 22:02:06 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/12 13:39:21 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 /*
 **	Handling mousepress, sets the coordinates clicked

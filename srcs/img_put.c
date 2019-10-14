@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   imgpxlput.c                                        :+:    :+:            */
+/*   img_put.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/06/10 18:59:22 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/09/30 21:16:03 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/12 13:43:26 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 /*
 **	Pixelput for image use, copies a given color to the correct location
 **	in memory set by mlx_get_data_addr
 */
 
-// void	imgpxlput(t_fract *frt, int color, int x, int y)
-// {
-// 	char	*adr;
-
-// 	adr = frt->adr;
-// 	ft_memcpy(&adr[(4 * x + (4 * WINX * y))], &color, 4);
-// }
-
-void	imgpxlput(t_fract *frt, int color, int x, int y)
+void	img_put(char *address, int color, int x, int y)
 {
-	char	*adr;
-
-	adr = frt->adr;
-	ft_memcpy(&adr[(4 * x + (4 * WINX * y))], &color, 4);
+	ft_memcpy((void *)&address[(4 * x + (4 * WINX * y))], &color, 4);
 }
