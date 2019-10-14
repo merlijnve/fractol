@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mpress.c                                           :+:    :+:            */
+/*   mmove.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/05/29 15:00:11 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/10/14 20:43:13 by mvan-eng      ########   odam.nl         */
+/*   Created: 2019/10/14 18:19:00 by mvan-eng       #+#    #+#                */
+/*   Updated: 2019/10/14 18:28:13 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-/*
-**	Handling mousepress, sets the coordinates clicked
-*/
-
-int		mpress(int button, int x, int y, t_fract *fract)
+int		mmove(int x, int y, t_fract *fract)
 {
-	(void)x;
-	(void)y;
-	if (button == 4)
-		fract->scale += 350;
-	if (button == 5)
-		fract->scale -= 350;
-	if (button == 1)
-		fract->flag.mp *= -1;
-	mlx_clear_window(fract->mlx, fract->win);
-	draw(fract);
+	if (fract->flag.mp == -1)
+	{
+		fract->mx = (double)x;
+		fract->my = (double)y;
+		mlx_clear_window(fract->mlx, fract->win);
+		draw(fract);
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/07/23 14:55:49 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/10/12 13:39:21 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/14 20:45:43 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	initialize_flags(t_fract *frt)
 {
 	frt->flag.p = 1;
+	frt->flag.mp = 1;
+	frt->flag.b = 1;
 }
 
 int		initialize_data(t_fract *frt)
@@ -24,7 +26,7 @@ int		initialize_data(t_fract *frt)
 	temp = 0;
 	frt->mlx = mlx_init();
 	frt->iter = 200;
-	frt->scale = 800.0;
+	frt->scale = 450.0;
 	frt->xt = 150;
 	frt->yt = 0;
 	initialize_flags(frt);
@@ -60,6 +62,7 @@ int		main(int argc, char **argv)
 	draw(frt);
 	mlx_hook(frt->win, 2, 0, key_press, frt);
 	mlx_hook(frt->win, 4, 0, mpress, frt);
+	mlx_hook(frt->win, 6, 0, mmove, frt);
 	mlx_loop(frt->mlx);
 	return (0);
 }

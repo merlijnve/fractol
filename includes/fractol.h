@@ -6,7 +6,7 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/07/23 16:26:22 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/10/14 14:52:26 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/14 20:42:04 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ typedef struct	s_rgb
 typedef struct	s_flag
 {
 	char		p;
+	char		mp;
+	char		b;
 }				t_flag;
 
 typedef struct	s_fract
@@ -62,6 +64,8 @@ typedef struct	s_fract
 	double	scale;
 	double	xt;
 	double	yt;
+	double	mx;
+	double	my;
 	int		section_y[WINY / 30];
 	t_flag	flag;
 }				t_fract;
@@ -85,5 +89,8 @@ int				hsv_to_int(int hue, double sat, double value);
 int				calc_mandelbrot(double x, double y, t_fract *frt);
 void			draw_triangle(char *adr, int x, int y, int size);
 void			draw_sierpinski(t_fract *fract);
+int				calc_julia(double x, double y, t_fract *fract);
+int				mmove(int x, int y, t_fract *fract);
+int				calc_iterations(double x, double y, t_fract *fract);
 
 #endif

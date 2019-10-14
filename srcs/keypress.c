@@ -6,7 +6,7 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/07/24 13:23:30 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/10/12 13:39:21 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/14 20:58:46 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int		key_press(int key, t_fract *fract)
 {
 	if (key == 53)
 		exit(0);
+	if (key == 11)
+		fract->flag.b = fract->flag.b == 0 ? 1 : 0;
 	if (key == 35)
 		fract->flag.p *= -1;
 	if (key == 27)
@@ -41,7 +43,7 @@ int		key_press(int key, t_fract *fract)
 		fract->iter += 50;
 	move_fractal(key, fract);
 	if (key == 27 || key == 24 || key == 35 || key == 123 || key == 124 ||
-	key == 126 || key == 125 || key == 123)
+	key == 126 || key == 125 || key == 123 || key == 11)
 	{
 		mlx_clear_window(fract->mlx, fract->win);
 		draw(fract);
