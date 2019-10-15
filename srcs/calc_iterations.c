@@ -70,6 +70,35 @@ int		calc_julia(double x, double y, t_fract *fract)
 	return (hsv_to_int(iter + fract->flag.b * 180, 0.6, 1.0));
 }
 
+int		calc_third(double x, double y, t_fract *fract)
+{
+	int		iter;
+	double	zx;
+	double	zy;
+	double	zx3;
+	double	ozy;
+
+	zx = (x - 0.5 * WINX) / 400.0;
+	zy = (y - 0.5 * WINY) / 400.0;
+	x = fract->mx / 300.0 - 2;
+	y = fract->my / 375.0 - 2;
+	iter = 0;
+	zx3 = zx * zx * zx;
+	while (iter < fract->iter && (zx3 + (zy * zy)) < 6.0)
+	{
+		ozy = zy;
+		zy = 2.0 * zx * zy + y;
+		zx = zx3 - (ozy * ozy * ozy) + x;
+		zx3 = zx * zx * zx;
+		iter++;
+	}
+	if ((zx * zx * zx) + (zy * zy * zy) < 6.0)
+		return (0);
+	if (fract->flag.p == -1)
+		return (hsv_to_int(fract->flag.b * 180 + 10 * log(zx3 * zx), 0.6, 1.0));
+	return (hsv_to_int(fract->flag.b * 180 + 10 * log(zx3 * zx), 0.6, 1.0));
+}
+
 int		calc_iterations(double x, double y, t_fract *fract)
 {
 	int	color;
@@ -78,7 +107,7 @@ int		calc_iterations(double x, double y, t_fract *fract)
 		color = calc_mandelbrot(x, y, fract);
 	if (fract->f == 2)
 		color = calc_julia(x, y, fract);
-	//if (fract->f == 3)
-	//	color = calc_third(x, y, fract);
+	if (fract->f == 3)
+		color = calc_third(x, y, fract);
 	return (color);
 }
