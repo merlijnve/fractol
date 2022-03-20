@@ -6,7 +6,7 @@
 #    By: mvan-eng <mvan-eng@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/07/19 11:58:17 by mvan-eng       #+#    #+#                 #
-#    Updated: 2019/10/15 14:33:42 by mvan-eng      ########   odam.nl          #
+#    Updated: 2019/10/22 14:46:53 by mvan-eng      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ all: $(NAME)
 $(NAME):
 	#cd libft && make
 	gcc $(FLAGS) $(SRC) $(LIBS) -L ./minilibx_macos/ -lmlx -framework \
-	OpenGL -framework AppKit -g
+	OpenGL -framework AppKit -o $(NAME)
 
 clean:
 	#cd libft && make clean

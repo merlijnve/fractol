@@ -6,7 +6,7 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/29 20:20:01 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/10/15 17:55:16 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/16 16:18:53 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int		calc_mandelbrot(double x, double y, t_fract *fract)
 
 	zx = 0.0;
 	zy = 0.0;
-	x = x / (300.0 + fract->scale) - 1.0 + fract->xt;
-	y = y / (300.0 + fract->scale) - 1.0 + fract->yt;
+	x = (x - 0.5 * WINX - (fract->mx + fract->scale)) / (300.0 + fract->scale) + fract->xt;
+	y = (y - 0.5 * WINY - (fract->my + fract->scale)) / (300.0 + fract->scale) + fract->yt;
 	iter = 0;
 	zx2 = zx * zx;
 	while (iter < fract->iter && (zx2 + (zy * zy)) < 4.0)
@@ -49,10 +49,10 @@ int		calc_julia(double x, double y, t_fract *fract)
 	double	zx2;
 	double	ozy;
 
-	zx = (x - 0.5 * WINX + fract->scale) / 400.0;
-	zy = (y - 0.5 * WINY + fract->scale) / 400.0;
-	x = fract->mx / 300.0 - 2;
-	y = fract->my / 375.0 - 2;
+	zx = (x - fract->mx) / (400.0 + fract->scale) + fract->xt - 1.0;
+	zy = (y - fract->my) / (400.0 + fract->scale) + fract->yt - 1.0;
+	x = fract->mx / 300.0 - 2.0;
+	y = fract->my / 300.0 - 2.0;
 	iter = 0;
 	zx2 = zx * zx;
 	while (iter < fract->iter && (zx2 + (zy * zy)) < 4.0)

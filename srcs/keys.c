@@ -6,7 +6,7 @@
 /*   By: mvan-eng <mvan-eng@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/07/24 13:23:30 by mvan-eng       #+#    #+#                */
-/*   Updated: 2019/10/15 15:04:09 by mvan-eng      ########   odam.nl         */
+/*   Updated: 2019/10/16 16:12:47 by mvan-eng      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,11 @@ int		mpress(int button, int x, int y, t_fract *fract)
 {
 	(void)x;
 	(void)y;
+	if (button == 4 || button == 5)
+	{
+		fract->mx += (double)x;
+		fract->my += (double)y;
+	}
 	if (button == 4)
 		fract->scale *= 1.1;
 	if (button == 5)
